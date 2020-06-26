@@ -1,0 +1,4 @@
+docker build -t "devops-deploy" .
+docker images
+docker run -itd --name "devops-deploy" -p 3030:8080 rishwanthrajaa/devops-deploy
+docker ps -a
