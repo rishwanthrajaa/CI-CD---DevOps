@@ -5,18 +5,18 @@ pipeline {
       stage('compile') {
          steps {
             git 'https://github.com/rishwanthrajaa/DevOps-Project1.git'
-            maven 'mvn compile'
+            sh 'mvn compile'
          }
       }
       stage('test') {
          steps {
-            maven 'mvn test'
+            sh 'mvn test'
          }
       }
       stage('package') {
          steps {
-            maven 'mvn clean'
-            maven 'mvn package'
+            sh 'mvn clean'
+            sh 'mvn package'
          }
       }
       stage('deploy-docker'){
