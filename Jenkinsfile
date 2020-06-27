@@ -20,9 +20,8 @@ pipeline {
          }
       }
       stage('deploy-docker'){
-          steps{
-              sh 'cd /var/lib/jenkins/workspace/DevOps-Project1'
-              sh 'docker build -t "docker-deploy" .'   
+         steps{
+              sh 'docker build -t "docker-deploy" /var/lib/jenkins/workspace/DevOps-Project1/'   
               sh 'docker run -itd --name "docker-deploy-container" -p 3030:8080 docker-deploy'
           }
       }
